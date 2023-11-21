@@ -275,3 +275,191 @@ setTimeout(function() {
 setTimeout(function() {
     console.log('Hello World');
 }, 0);  // It is a hack to execute the code after the call stack is empty
+
+
+// API - Application Programming Interface
+// it is a set of functions which allows us to interact with the application or the browser
+
+
+// Promises -
+// it is an object which represents the eventual completion or failure of an asynchronous operation and its resulting value
+// A promise can be in one of the three states - pending, fulfilled, rejected
+
+// Example -
+// let promise = new Promise(function(resolve, reject) {
+//     setTimeout(function() {
+//         resolve('Promise');
+//     }, 1000);
+// });
+// promise.then(function(data) {
+//     console.log(data);
+// });
+
+// Example -
+let meraPromise = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        console.log('I am inside Promise');
+    }, 5000);
+    resolve(2255);
+});
+console.log(meraPromise);  // {<fulfilled>: 2255}
+
+// let meraPromise1 = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         console.log('I sm inside Promise');
+//     }, 5000);
+//     reject(new Error('Bhai sahab error aaya hai'));
+// });
+// console.log(meraPromise1);  // {<rejected>: Error: Bhai sahab error aaya hai}
+
+let meraPromise2 = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        console.log('meraPromise2');
+    }, 5000);
+});
+
+let meraPromise3 = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        console.log('meraPromise3');
+    }, 3000);
+});
+
+// meraPromise3 will be executed first and then meraPromise2 will be executed
+// Promises are used to execute code parallelly
+
+// then() - it is a method of promise object which is used to handle the success case of the promise 
+// catch() - it is a method of promise object which is used to handle the failure case of the promise
+
+// Example -
+let meraPromise4 = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        console.log('I am meraPromise4');
+    }, 2000);
+    resolve(123456);
+});
+
+meraPromise4.then((value) => {console.log(value)});  // 123456 (It will print before 'I am meraPromise4' because it is an async code)
+
+let meraPromise5 = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        console.log('I am meraPromise5');
+    }, 2000);
+    reject(new Error('Bhai error hai'));
+});
+
+meraPromise5.catch((error) => {console.log("Received an error")});
+
+// we can also use then() to handle the failure case of the promise
+// meraPromise4.then((value) => {console.log(value)}, (error) => {console.log("Received an error")});   
+// OR
+meraPromise4.then((value) => {console.log(value)}).catch((error) => {console.log("Received an error")});
+
+
+// Multiple Promises -
+// Promise.all() - it is a method of promise object which is used to handle multiple promises
+
+let wadaa1 = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        console.log('setTimeout1 started');
+    }, 2000);
+    resolve(true);
+});
+
+let output = wadaa1.then(() => {
+    let wadaa2 = new Promise(function(resolve, reject){
+        setTimeout(function(){
+            console.log('setTimeout2 started');
+        }, 3000);
+        resolve("wadaa2 resolved");
+    });
+    return wadaa2;
+});
+
+output.then((value) => console.log(value));
+
+
+// Async/Await -
+// (next promise will be executed only when the previous promise is completed)
+// returns a promise
+
+// it is used to write async code in a synchronous way (sequential way) 
+// it is used to handle multiple promises in a sequential way 
+
+async function util(){
+    let delhiWeather = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Delhi weather is 22 degree celsius");
+        }, 6000);
+    });
+
+    let mumbaiWeather = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Mumbai weather is 25 degree celsius");
+        }, 8000);
+    });
+
+    let dw = await delhiWeather;  
+    let mw = await mumbaiWeather; // it will be executed only when delhiWeather is completed
+
+    return [dw, mw];
+}
+console.log(util());  
+/* 
+Promise {<pending>}  
+[[Prototype]] : Promise
+[[PromiseState]] : "fulfilled"
+[[PromiseResult]] : Array(2)
+0 : "Delhi weather is 22 degree celsius"
+1 : "Mumbai weather is 25 degree celsius"
+length : 2
+etc...}
+*/
+
+
+// Fetch API -
+// it is used to make http requests to the server (GET, POST, PUT, DELETE) to get(retrieve) the data from the server or to post the data to the server or to update the data on the server or to delete the data from the server
+// returns a promise
+
+// GET request -
+async function utility(){
+    let content = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+    let output = await content.json();
+    console.log(output);
+}
+utility();  // {userId: 1, id: 1, title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit", body: "quia et suscipit\suscipit recusandae consequuntur …strum rerum est autem sunt rem eveniet architecto"}
+
+// POST request -
+async function utility1(){
+    let content = await fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+            title: 'foo',
+            body: 'bar',
+            userId: 1
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        }
+    });
+    let output = await content.json();
+    console.log(output);
+} 
+utility1();  // {title: "foo", body: "bar", userId: 1, id: 101}
+
+
+// Closure -
+// it is a function which has access to the outer function's variables even after the outer function has returned 
+// it is used to create private variables and methods 
+// reference to the outer function's variables is stored in the closure
+// Every time we call the outer function, a new closure is created (every function in javascript is a closure)
+
+function init(){
+    let name = 'Himank';
+    function displayName(){
+        console.log(name);
+    }
+    return displayName;
+}
+let myFunc = init();
+myFunc();  // Himank
+// myFunc() is a closure which has access to the outer function's variables even after the outer function has returned because the reference to the outer function's variables is stored in the closure
