@@ -1,1 +1,0 @@
-run command 'npm install' in terminal and then run 'npm install' and then you are good to go.
