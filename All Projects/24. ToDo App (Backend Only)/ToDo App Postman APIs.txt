@@ -1,0 +1,26 @@
+1. createTodo
+POST -> http://localhost:3000/api/v1/createTodo/
+Body -> raw => {
+    "title": "Create Karenge",
+    "description": "ABCD"
+}
+
+
+2. getTodo
+GET -> http://localhost:3000/api/v1/getTodos
+
+
+3. getTodo by ID
+GET -> http://localhost:3000/api/v1/getTodos/65853cf76f901878aefbc42c
+
+
+4. updateTodo
+PUT -> http://localhost:3000/api/v1/updateTodo/65853cf76f901878aefbc42c
+Body -> raw => {
+    "title": "Himank Joshi Updated 2nd",
+    "description": "Bada Bhai Joginder Updated"
+}
+
+
+5. deleteTodo
+DELETE -> http://localhost:3000/api/v1/deleteTodo/658ef1fb7090c780ff25c40a
