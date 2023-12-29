@@ -1,0 +1,35 @@
+1. createPost
+POST -> http://localhost:3000/api/v1/posts/create
+Body -> raw => {
+   "title": "2nd Post",
+   "body": "ABCDEFGHIJ"
+}
+
+
+2. getAllPosts
+GET -> http://localhost:3000/api/v1/posts
+
+
+3. createComment on Post
+POST -> http://localhost:3000/api/v1/comments/create
+Body -> raw => {
+    "post": "658ef32753e852131f984c41",
+    "user": "Random User 1",
+    "body": "XYZ"
+}
+
+
+4. like a Post
+POST -> http://localhost:3000/api/v1/likes/like
+Body -> raw => {
+    "post": "658ef32753e852131f984c41",
+    "user": "Random User 1"
+}
+
+
+5. Unlike a Post
+POST -> http://localhost:3000/api/v1/likes/unlike
+Body -> raw => {
+    "post": "658ef32753e852131f984c41",
+    "like": "658ef4c253e852131f984c49"
+}
