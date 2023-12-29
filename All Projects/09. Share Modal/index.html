@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Share Modal - Himank.site</title>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <!-- Circles -->
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+
+        <!-- Container -->
+        <div class="container">
+
+            <div>
+                <img src="Assets/Profile Picture.jpg" alt="">
+            </div>
+
+            <div class="UserName">
+                <h2>Himank Joshi</h2>
+            </div>
+
+            <div class="designation">
+                <h3>CSE Undergrad</h3>
+            </div>
+
+            <!-- Button -->
+            <div class="btnGroup">
+                <button class="btn btnShare" onclick="openModal()">
+                    <i class="fa-solid fa-share"></i>
+                    <div>Share My Profile</div>
+                </button>
+
+                
+                <a href="https://www.linkedin.com/in/himank8106/" target="_blank">
+                    <button class="btn btnFollow">Connect with me</button>
+                </a>
+                
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Modal Component -->
+    <div class="modal">
+
+        <div class="modalHeader">
+            <h1>Share My Profile</h1>
+            <div>
+                <i class="fa-solid fa-xmark close" onclick="closeModal()"></i>
+            </div>
+        </div>
+
+        <div>
+            <h3>Share this via</h3>
+            <div class="iconContainer">
+                <a href="https://www.linkedin.com/in/himank8106/" class="icon" id="linkedin">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+                <a href="https://github.com/Himank8106/" class="icon" id="github">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="https://www.instagram.com/himank8106/" class="icon" id="instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://x.com/Himankjoshi8106" class="icon" id="twitter">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" onclick="closeModal()"></div>
+
+    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
