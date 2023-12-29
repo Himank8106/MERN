@@ -1,0 +1,38 @@
+1. localFileUpload
+POST -> http://localhost:4000/api/v1/upload/localFileUpload
+Body -> form-data => 
+      key                 value
+[keyName](File)    [Upload file here]
+
+
+2. imageUpload
+POST -> http://localhost:4000/api/v1/upload/imageUpload
+Body -> form-data => 
+         Key                    Value
+i.   name (text)                Himank
+ii.  tags (text)                photos
+iii. email (text)         himank8106@gmail.com
+iv.  imageFile (file)      [Upload file here]
+
+
+3. videoUpload
+POST -> http://localhost:4000/api/v1/upload/videoUpload
+Body -> form-data => 
+         Key                     Value
+i.   name (text)              Bhupendra
+ii.  tag (text)                  Jogi
+iii. email (text)            abc@gmail.com
+iv.  imageFile (file)      [Upload file here]
+
+
+4. imageSizeReducer
+POST -> http://localhost:4000/api/v1/upload/imageSizeReducer
+Body -> form-data => 
+         Key                    Value
+i.   name (text)                Himank
+ii.  tags (text)                photos
+iii. email (text)         himank8106@gmail.com
+iv.  imageFile (file)      [Upload file here]
+
+
+

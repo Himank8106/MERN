@@ -1,0 +1,60 @@
+1. signup
+POST -> http://localhost:3000/api/v1/signup
+Body -> raw => {
+    "name": "Joginder",
+    "email": "tharabhaijoginder@gmail.com",
+    "password": "BhupendraJogi",
+    "Role": "Student"
+}
+
+
+2. login
+POST -> http://localhost:3000/api/v1/login
+Body -> raw => {
+    "email": "tharabhaijoginder@gmail.com",
+    "password": "BhupendraJogi"
+}
+
+
+3. Protected Authentication Route
+GET -> http://localhost:3000/api/v1/test
+Body -> raw => {
+   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRoYXJhYmhhaWpvZ2luZGVyQGdtYWlsLmNvbSIsImlkIjoiNjU4YTg3M2UxMWE1MTE4MjBlZDNiMzVmIiwiaWF0IjoxNzAzNTc4NDMxLCJleHAiOjE3MDM2NjQ4MzF9.-liJibfExCYY2bjAWFrNNr2zVvs3rwAl6RlXEanhJJ8"
+}
+
+
+4. Protected Admin Route
+GET-> http://localhost:3000/api/v1/admin
+Body -> raw => {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRoYXJhYmhhaWpvZ2luZGVyQGdtYWlsLmNvbSIsImlkIjoiNjU4YTg3M2UxMWE1MTE4MjBlZDNiMzVmIiwiaWF0IjoxNzAzNTc4NDMxLCJleHAiOjE3MDM2NjQ4MzF9.-liJibfExCYY2bjAWFrNNr2zVvs3rwAl6RlXEanhJJ8"
+}
+
+
+5. Protected Student Route
+GET -> http://localhost:3000/api/v1/student
+Body -> raw => {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRoYXJhYmhhaWpvZ2luZGVyQGdtYWlsLmNvbSIsImlkIjoiNjU4YTg3M2UxMWE1MTE4MjBlZDNiMzVmIiwiaWF0IjoxNzAzNTc4NDMxLCJleHAiOjE3MDM2NjQ4MzF9.-liJibfExCYY2bjAWFrNNr2zVvs3rwAl6RlXEanhJJ8"
+}
+
+
+6. getEmail Route
+GET -> http://localhost:3000/api/v1/getEmail
+Body -> raw =>  {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRoYXJhYmhhaWpvZ2luZGVyQGdtYWlsLmNvbSIsImlkIjoiNjU4YTg3M2UxMWE1MTE4MjBlZDNiMzVmIiwiaWF0IjoxNzAzNTc4NDMxLCJleHAiOjE3MDM2NjQ4MzF9.-liJibfExCYY2bjAWFrNNr2zVvs3rwAl6RlXEanhJJ8"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
